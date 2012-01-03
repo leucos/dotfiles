@@ -1,0 +1,106 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type overide
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+background no #Transparent background.
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer right
+use_xft yes
+
+# Update interval in seconds
+update_interval .5
+
+# Minimum size of text area
+minimum_size 260 5
+
+# Draw shades?
+draw_shades no
+
+# Draw borders around graphs
+draw_graph_borders no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+xftfont Eurostile:size=10
+xftalpha 0.7
+#font arial
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_margin 9
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color grey
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 40
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${font arial black:size=12}${color orange}SYSTEM${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
+${color orange}${font openlogos:size=30}U$color${font}
+${voffset -38}${goto 40}$sysname  $kernel on $machine${voffset -18}
+${voffset 16}${goto 40}$nodename  ${font arial black:size=9}UP: $font$uptime ${voffset -18}
+${voffset 6}${font arial black:size=30}${time %e}$font ${voffset -17}${time %A, }${time %B} ${time %G}
+${voffset -2}${goto 65}${font arial black:size=10} ${time %I:%M:%S %p}
+${font arial black:size=12}${color orange}CPU${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
+${font arial black:size=9}USAGE (AVG): $font${cpu cpu0}%
+${cpugraph cpu0 303030 C0C0C0}
+${font arial black:size=9}CORE 1: $font${cpu cpu1}% $alignr ${font arial black:size=9}CORE 2: $font${cpu cpu2}%
+${cpugraph cpu1 25,140 303030 C0C0C0}  $alignr${cpugraph cpu2 25,140 303030 C0C0C0}
+${font arial black:size=12}${color orange}MEMORY${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
+${font arial black:size=9}RAM: $font$memperc% ${alignr}$mem ${font arial black:size=9}/ $font$memmax 
+${membar 4}
+${font arial black:size=9}SWAP: $font$swapperc% ${alignr}$swap ${font arial black:size=9}/ $font$swapmax 
+${swapbar 4}
+${font arial black:size=12}${color orange}DISK${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
+${font arial black:size=9}VOLUME${goto 116}TYPE${goto 180}%FREE${alignr 1}SIZE$font
+${font arial black:size=9}ROOT:$font${goto 120}${fs_type /}${goto 190}${fs_free_perc /}%${alignr}${fs_size /}
+${fs_bar 4 /}$color
+${font arial black:size=12}${color orange}NETWORK${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
+${font arial black:size=9}LOCAL:$font${addr eth0} $alignr ${color} ${font arial black:size=9}EXTERNAL:$font${execi 14400 wget -O - http://whatismyip.org/ | tail}${color}
+${font arial black:size=9}DOWN: $font$color${downspeed eth0} k/s ${alignr}${font arial black:size=9}UP: $font${upspeed eth0} k/s
+${downspeedgraph eth0 25,140 303030 C0C0C0} ${alignr} ${upspeedgraph eth0 25,140 303030 C0C0C0}$color
+${font arial black:size=9}TOTAL: $font${totaldown eth0} ${alignr}${font arial black:size=9}TOTAL: $font${totalup eth0}
+${font arial black:size=9}INBOUND: $font${tcp_portmon 1 32767 count} ${font arial black:size=9}OUTBOUND: $font${tcp_portmon 32768
+61000 count}${alignr}${font arial black:size=9}TOTAL: $font${tcp_portmon 1 65535 count}
+${font arial black:size=12}${color orange}ISSUES${color}${font arial black:size=11}OPENED${color orange} ${hr 2}${texeci 60 ruby ~/.bin/parse_flyspray.rb | wc -l} $color$font
+${execi 60 ruby ~/.bin/parse_flyspray.rb}
+${font arial black:size=12}${color orange}ALERTS${color}${font arial black:size=11}TRIGGERED${color orange} ${hr 2}${texeci 60 ssh dev 'monshow | grep FAIL | wc -l'} $color$font
+${execi 60 ssh dev 'monshow | grep FAIL | awk '\''{ print $2"/"$3 }'\'' | uniq -c'}
+

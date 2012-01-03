@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'rb-inotify'
+require 'daemons'
+require 'logger'
+
+$lid = "/proc/acpi/button/lid/LID/state"
+
+def wait_event
+  notifier = INotify::Notifier.new
+
+  notifier.watch($lid, :close_nowrite) do |event|
+  end
+
+  notifier.process
+end
+
+Daemonize.daemonize()
+
+if Dir.exists?(File.expand_path('~/tmp/lidwatch.log')) then 
+  log = Logger.new(File.expand_path('~/tmp/'), 5, 'daily')
+else
+  log = Logger.new('/tmp/lidwatch.log', 5, 'daily')
+end
+
+log.level = Logger::INFO
+log.info "#{Time.now} lidwatch starting"
+
+while true
+  wait_event
+  log.info "#{Time.now} got lid event"
+  f = File.new($lid)
+  if f.read =~ /state:\s+closed/ then
+    log.info "#{Time.now} new state is close; going suspend mode"
+    `dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend`
+  else
+    log.info "#{Time.now} new state is open; ignoring"
+  end
+end
+
+
