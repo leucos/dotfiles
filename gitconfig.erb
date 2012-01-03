@@ -3,27 +3,27 @@
   email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 
 [core]
   excludesfile = /home/<%= ENV['USER'] %>/.gitignore
   editor = vim
-	autocrlf = input
+  autocrlf = input
 
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 
 [github]
   user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
   token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 
 [merge]
-	tool = meld
+  tool = meld
 
 [alias]
   ci = commit
@@ -34,14 +34,14 @@
 	ctags = !.git/hooks/ctags
 
 [diff "odf"]
-      textconv=odt2txt
+  textconv=odt2txt
 
 [giggle]
-	main-window-maximized = false
-	main-window-geometry = 994x739+232+59
-	main-window-view = HistoryView
-	file-view-vpane-position = 252
-	history-view-vpane-position = 433
+  main-window-maximized = false
+  main-window-geometry = 994x739+232+59
+  main-window-view = HistoryView
+  file-view-vpane-position = 252
+  history-view-vpane-position = 433
 
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
