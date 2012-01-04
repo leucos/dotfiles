@@ -1,8 +1,16 @@
 # 
 # Bootstraps vim modules undler ~/.vim/bundle
 #
-cd ~/dotfiles
 
+# Let's save the currrent path
+MYOLDPW=`pwd`
+
+# Let's find dotfiles directory
+cd ~/.vim
+cd `pwd -P`
+cd ..
+
+# Add submodules
 git submodule add git://github.com/tpope/vim-fugitive.git vim/bundle/vim-fugitive
 git submodule add git://github.com/chrismetcalf/vim-conque.git vim/bundle/vim-conque
 git submodule add https://github.com/mattn/gist-vim.git vim/bundle/gist-vim
@@ -25,4 +33,9 @@ git submodule add git://github.com/vim-scripts/netrw.vim.git vim/bundle/netrw.vi
 git submodule add git://github.com/tpope/vim-unimpaired.giti vim/bundle/vim-unimpaired
 git submodule add git://github.com/xolox/vim-notes.git vim/bundle/vim-notes
 
-cd -
+# Init & update submodules
+git submodule init
+
+# Go back where we came from
+cd $MYOLDPWD
+
