@@ -4,7 +4,7 @@ These are config files to set up a system the way I like it.
 
 == Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/leucos/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
   rake install
 
@@ -13,4 +13,6 @@ You can then bootstrap your vim plugins by invoking :
   bootstrap_vim.sh
 
 The plugins are managed with pathogen and Git submodules, can't be easier.
+
+You probably want to remove some scripts in bash.d according to your configuration.
 
