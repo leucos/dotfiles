@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vim-notes"]
 	path = vim/bundle/vim-notes
 	url = git://github.com/xolox/vim-notes.git
+[submodule "vim/bundle/vim-conque"]
+	path = vim/bundle/vim-conque
+	url = git://github.com/chrismetcalf/vim-conque.git
