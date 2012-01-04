@@ -34,6 +34,7 @@ git submodule add git://github.com/xolox/vim-notes.git vim/bundle/vim-notes
 
 # Init & update submodules
 git submodule init
+git submodule update
 
 # Go back where we came from
 cd $MYOLDPWD
