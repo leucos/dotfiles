@@ -1,2 +1,3 @@
 
-exec i3 --force-xinerama
+exec ck-launch-session gnome-session
+#exec i3 --force-xinerama
