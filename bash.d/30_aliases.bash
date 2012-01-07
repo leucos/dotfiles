@@ -31,6 +31,9 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
+# One instance to rule them all
+alias gvim="gvim --remote-tab-silent"
+
 # enable color support of ls and also add handy aliases
 
 # rails
@@ -56,3 +59,4 @@ say() {
 alias dual='ln -sf /etc/X11/xorg.conf.dual /etc/X11/xorg.conf'
 alias single='ln -sf /etc/X11/xorg.conf.single /etc/X11/xorg.conf'
 alias projector='ln -sf /etc/X11/xorg.conf.projector /etc/X11/xorg.conf'
+alias urtilde='urbanterror +connect 88.190.17.133:12345 +set password "avr" +set rconPassword avr'

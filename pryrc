@@ -1,5 +1,5 @@
 # === EDITOR ===
-Pry.editor = 'vi'
+Pry.editor = proc { |file, line| "gvim +#{line} --remote-tab-silent #{file}x " }
 
 # === CUSTOM PROMPT ===
 # This prompt shows the ruby version (useful for RVM)
