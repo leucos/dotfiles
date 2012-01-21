@@ -1,8 +1,8 @@
-export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/client
-export ORACLE_SID="MAQ1020"
+export ORACLE_HOME=/usr/lib/oracle/11.2/client64/
+export ORACLE_SID="TEST1020"
 export LD_LIBRARY_PATH="$ORACLE_HOME/lib/"
 export PATH=$PATH:$ORACLE_HOME/bin
-export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
+export NLS_LANG=French_France.UTF8
 export SQLPATH=$ORACLE_HOME/sqlplus
 export PATH=$ORACLE_HOME/bin:$PATH
 
@@ -13,4 +13,6 @@ else
   LD_LIBRARY_PATH=$ORACLE_HOME/lib
 fi
 export LD_LIBRARY_PATH
+
+alias sqlplus='rlwrap sqlplus'
 

@@ -107,15 +107,16 @@ bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
-#bindcode 122 exec ~/.bin/sound 2dB-
-#bindcode 123 exec ~/.bin/sound 2dB+
-#bindcode 121 exec ~/.bin/sound toggle
+# Alsa
+bindcode 122 exec ~/.bin/sound 5%-
+bindcode 123 exec ~/.bin/sound 5%+
+bindcode 121 exec ~/.bin/sound toggle
 
-# Soundcontrol
-bindcode 122 exec ~/.bin/sound down
-bindcode 123 exec ~/.bin/sound up
-bindcode 121 exec ~/.bin/sound mute
-
+# Pulse
+#bindcode 122 exec ~/.bin/sound down
+#bindcode 123 exec ~/.bin/sound up
+#bindcode 121 exec ~/.bin/sound mute
+#
 # Shortcuts
 bindcode $mod+122 exec google-chrome
 bindcode $mod+123 exec thunderbird
@@ -174,6 +175,8 @@ bar {
   
 }
 
+focus_follows_mouse no
+
 workspace 1 terms
 workspace 2 chrome
 workspace 3 mail
@@ -190,7 +193,7 @@ assign [class="Nautilus"] → nautilus
 
 workspace_auto_back_and_forth yes
 
-exec feh --bg-fill ~/Images/bg/steph5.jpg 
+exec feh --bg-fill ~/Images/backgrounds/steph5.jpg 
 exec xrdb -merge .Xdefaults 
 exec nautilus
 exec ~/.bin/lidwatch

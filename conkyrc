@@ -93,7 +93,8 @@ ${font arial black:size=9}VOLUME${goto 116}TYPE${goto 180}%FREE${alignr 1}SIZE$f
 ${font arial black:size=9}ROOT:$font${goto 120}${fs_type /}${goto 190}${fs_free_perc /}%${alignr}${fs_size /}
 ${fs_bar 4 /}$color
 ${font arial black:size=12}${color orange}NETWORK${color}${font arial black:size=11}INFORMATION${color orange} ${hr 2}$color$font
-${font arial black:size=9}LOCAL:$font${addr eth0} $alignr ${color} ${font arial black:size=9}EXTERNAL:$font${execi 14400 wget -O - http://whatismyip.org/ | tail}${color}
+${font arial black:size=9}ETH0:$font${addr eth0} $alignr ${color} ${font arial black:size=9}EXTERNAL:$font${execi 14400 wget -O - http://whatismyip.org/ | tail}${color}
+${font arial black:size=9}WIFI:$font${addr wlan0} $alignr ${color}
 ${font arial black:size=9}DOWN: $font$color${downspeed eth0} k/s ${alignr}${font arial black:size=9}UP: $font${upspeed eth0} k/s
 ${downspeedgraph eth0 25,140 303030 C0C0C0} ${alignr} ${upspeedgraph eth0 25,140 303030 C0C0C0}$color
 ${font arial black:size=9}TOTAL: $font${totaldown eth0} ${alignr}${font arial black:size=9}TOTAL: $font${totalup eth0}

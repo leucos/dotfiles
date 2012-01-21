@@ -1,5 +1,12 @@
 !{{{ URXVT
-!
+
+! screen font
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
 ! General
 !urxvt*termName:           rxvt-unicode-256color
 urxvt*termName:           xterm-color
@@ -28,7 +35,13 @@ urxvt*cutchars:        '"'()*<>[]{|}
 ! Appearance
 !urxvt*font:     -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-2
 !urxvt*boldFont: -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-2
-URxvt*font: xft:Monospace:pixelsize=12
+!URxvt*font: xft:Monospace:pixelsize=12
+!URxvt*font:  -*-ubuntu-*-r-*-*-*-*-*-*-*-*-*-*
+!URxvt.font: xft:ubuntu:pixelsize=10
+URxvt.font: xft:ubuntu:size=12
+!URxvt.letterSpace:letterSpace -1
+!urxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+!urxvt.letterSpace: -1
 
 !
 ! Cursor

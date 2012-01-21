@@ -8,8 +8,8 @@ play() {
 }
 
 mixer() {
-#  /usr/bin/amixer sset 'Master',0 $1 > /dev/null 2>&1
-  pamixer $1
+  /usr/bin/amixer sset 'Master',0 $1 > /dev/null 2>&1
+#  pamixer $1
 }
 
 pamixer() {
