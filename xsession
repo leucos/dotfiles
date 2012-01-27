@@ -13,11 +13,6 @@ gnome*)
   exec ck-launch-session dbus-launch gnome-session
   ;;
 i3)
-#  ls -la /home/leucos/.rvm/bin/ruby > /home/leucos/what
-#  which ruby >> /home/leucos/what
-#  ~/.rvm/scripts/rvm && ~/.bin/lidwatch >> /home/leucos/what 2>&1  
-#  ruby ~/.bin/lidwatch >> /home/leucos/what 2>&1  
-#  ruvy -v >> /home/leucos/what 2>&1
   ~leucos/.bin/lidwatch &
   exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
 #  exec ck-launch-session dbus-launch i3 --force-xinerama -V >>~/.i3/i3log 2>&1
