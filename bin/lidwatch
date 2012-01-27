@@ -1,32 +1,47 @@
 #!/usr/bin/env ruby
 
-require 'daemons'
+#require 'daemons'
 require 'logger'
 
 $lid = "/proc/acpi/button/lid/LID0/state"
 
-Daemonize.daemonize()
 
 if Dir.exists?(File.dirname(File.expand_path('~/tmp/'))) then 
-  log = Logger.new(File.expand_path('~/tmp/lidwatch.log'))
+  file = File.expand_path('~/tmp/lidwatch.log') 
 else
-  log = Logger.new('/tmp/lidwatch.log')
+  file ='/tmp/lidwatch.log' 
 end
 
+log = Logger.new(file)
 log.level = Logger::INFO
+
 log.info "#{Time.now} lidwatch starting for #{$lid}"
+
+#Daemonize.daemonize()
+
+#log = Logger.new(file)
+#log.level = Logger::INFO
+
+#log.info "#{Time.now} lidwatch daemonized"
 
 while true
   sleep 5
+
   f = File.new($lid)
   state = f.read
   f.close
-  if state =~ /state:\s+closed/ then
-    log.info "#{Time.now} new state is close; going suspend mode"
-    `dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend`
+
+  state = state =~ /state:\s+closed/ ? "closed" : "open"
+
+  if state == "closed" then
+    log.info "#{Time.now} new state is closed; going suspend mode"
+    oldstate = "closed"
+   `dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend`
+    #"i3lock && dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend` 
     sleep 20
-  else
+  elsif state == "open" && oldstate == "closed"
     log.info "#{Time.now} new state is open; ignoring"
+    oldstate = "open"
   end
 end
 

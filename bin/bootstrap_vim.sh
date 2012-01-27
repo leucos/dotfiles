@@ -31,6 +31,7 @@ git submodule add https://github.com/kana/vim-textobj-user.git vim/bundle/vim-te
 git submodule add git://github.com/vim-scripts/netrw.vim.git vim/bundle/netrw.vim
 git submodule add git://github.com/tpope/vim-unimpaired.git vim/bundle/vim-unimpaired
 git submodule add git://github.com/xolox/vim-notes.git vim/bundle/vim-notes
+git submodule add https://github.com/wincent/Command-T.git vim/bundle/command-t
 
 # Init & update submodules
 git submodule init

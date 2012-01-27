@@ -18,7 +18,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec gnome-terminal --working-directory `cat ~/.lastcd`
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -77,28 +77,28 @@ bindsym $mod+q focus parent
 #bindcode $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace terms
-bindsym $mod+eacute workspace chrome
-bindsym $mod+quotedbl workspace irc
-bindsym $mod+apostrophe workspace mail
-bindsym $mod+parenleft workspace whatever
-bindsym $mod+minus workspace music
-bindsym $mod+egrave workspace nautilus
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ampersand workspace 1: terms
+bindsym $mod+eacute workspace 2: chrome
+bindsym $mod+quotedbl workspace 3: irc
+bindsym $mod+apostrophe workspace 4: mail 
+bindsym $mod+parenleft workspace 5: whatever
+bindsym $mod+minus workspace 6: music
+bindsym $mod+egrave workspace 7: nautilus
+bindsym $mod+underscore workspace 8: 8
+bindsym $mod+ccedilla workspace 9: 9
+bindsym $mod+agrave workspace 10: 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace terms
-bindsym $mod+Shift+2 move workspace chrome
-bindsym $mod+Shift+3 move workspace irc
-bindsym $mod+Shift+4 move workspace mail
-bindsym $mod+Shift+5 move workspace whatever
-bindsym $mod+Shift+6 move workspace music
-bindsym $mod+Shift+7 move workspace nautilus
-bindsym $mod+Shift+8 move workspace 8
-bindsym $mod+Shift+9 move workspace 9
-bindsym $mod+Shift+0 move workspace 10
+bindsym $mod+Shift+1 move workspace 1: terms
+bindsym $mod+Shift+2 move workspace 2: chrome
+bindsym $mod+Shift+3 move workspace 3: irc
+bindsym $mod+Shift+4 move workspace 4: mail
+bindsym $mod+Shift+5 move workspace 5: whatever
+bindsym $mod+Shift+6 move workspace 6: music
+bindsym $mod+Shift+7 move workspace 7: nautilus
+bindsym $mod+Shift+8 move workspace 8: 8
+bindsym $mod+Shift+9 move workspace 9: 9
+bindsym $mod+Shift+0 move workspace 10: 10
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -175,7 +175,7 @@ bar {
   
 }
 
-focus_follows_mouse no
+#focus_follows_mouse no
 
 workspace 1 terms
 workspace 2 chrome
@@ -184,19 +184,19 @@ workspace 4 irc
 workspace 5 whatever
 workspace 6 nautilus
 
-assign [class="chrome"] → chrome
-assign [class="Pidgin"] → irc
-assign [class="Skype"] → irc
-assign [class="Thunderbird"] → mail
-assign [class="Clementine"] → music
-assign [class="Nautilus"] → nautilus
+assign [class="chrome"] → 2: chrome
+assign [class="Pidgin"] → 3: irc
+assign [class="Skype"] → 3: irc
+assign [class="Thunderbird"] → 4: mail
+assign [class="Clementine"] → 6: music
+assign [class="Nautilus"] → 7: nautilus
 
 workspace_auto_back_and_forth yes
 
 exec feh --bg-fill ~/Images/backgrounds/steph5.jpg 
 exec xrdb -merge .Xdefaults 
 exec nautilus
-exec ~/.bin/lidwatch
+exec ~/.rvm/scripts/rvm &&  ~/.bin/lidwatch
 exec cryptkeeper
 exec pidgin
 exec nm-applet

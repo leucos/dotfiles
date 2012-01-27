@@ -56,7 +56,30 @@ alias redcar=wrapped_redcar
 say() {
 	mplayer -user-agent Mozilla "http://translate.google.com/translate_tts?tl=en&q=$(echo $* | sed 's#\ #\+#g')" > /dev/null 2>&1 ; 
 }
+
+urtilde() {
+  if test -z "$1" then 
+    echo "No command-line arguments. Please provide rcon password."
+    exit
+  fi
+
+  urbanterror +connect 88.190.17.133:12345 +set password "$1" +set rconPassword "$1"
+}
+
 alias dual='ln -sf /etc/X11/xorg.conf.dual /etc/X11/xorg.conf'
 alias single='ln -sf /etc/X11/xorg.conf.single /etc/X11/xorg.conf'
 alias projector='ln -sf /etc/X11/xorg.conf.projector /etc/X11/xorg.conf'
-alias urtilde='urbanterror +connect 88.190.17.133:12345 +set password "avr" +set rconPassword avr'
+
+alias i3restart='feh --bg-fill ~/Images/backgrounds/steph5.jpg; i3-msg "restart"'
+alias dual='disper -d auto -e -t left; i3restart'
+alias clone='disper -c; i3restart'
+alias single='disper -s; i3restart'
+
+# Opens gnome-terminal in the last accessed directory
+alias gt='gnome-terminal --working-directory `cat ~/.lastcd`'
+
+# Sublme Text shortcut
+alias sl="subl -ab"
+
+# One line file server
+alias fileserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd).start'"

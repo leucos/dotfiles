@@ -31,9 +31,6 @@
 [submodule "vim/bundle/vim-matchit"]
 	path = vim/bundle/vim-matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "vim/bundle/vim-ruby-debugger"]
-	path = vim/bundle/vim-ruby-debugger
-	url = https://github.com/astashov/vim-ruby-debugger.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git

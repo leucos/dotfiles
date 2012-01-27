@@ -14,6 +14,9 @@ export HISTFILESIZE=10000
 
 shopt -s cmdhist
 
+# Cross shell last cd recording
+trap 'pwd > ~/.lastcd' DEBUG
+
 #
 # Prompt hacking
 #
