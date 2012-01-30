@@ -8,6 +8,10 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
   echo "D-Bus per-session daemon address is: $DBUS_SESSION_BUS_ADDRESS"
 fi
 
+if disper -l | grep 'DFP-1'; then
+  dual
+fi
+
 case $1 in
 gnome*)
   exec ck-launch-session dbus-launch gnome-session

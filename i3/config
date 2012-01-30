@@ -199,4 +199,5 @@ exec nautilus
 exec ~/.rvm/scripts/rvm &&  ~/.bin/lidwatch
 exec cryptkeeper
 exec pidgin
+exec dropboxd start
 exec nm-applet

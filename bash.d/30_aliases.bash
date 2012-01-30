@@ -58,7 +58,7 @@ say() {
 }
 
 urtilde() {
-  if test -z "$1" then 
+  if test -z "$1"; then 
     echo "No command-line arguments. Please provide rcon password."
     exit
   fi
