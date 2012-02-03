@@ -1,4 +1,3 @@
-# 
 # Bootstraps vim modules undler ~/.vim/bundle
 #
 
@@ -23,7 +22,6 @@ git submodule add git://github.com/altercation/vim-colors-solarized.git vim/bund
 git submodule add git://github.com/tpope/vim-endwise.git vim/bundle/vim-endwise
 git submodule add https://github.com/tpope/vim-git.git vim/bundle/vim-git
 git submodule add https://github.com/edsono/vim-matchit.git vim/bundle/vim-matchit
-git submodule add https://github.com/astashov/vim-ruby-debugger.git vim/bundle/vim-ruby-debugger
 git submodule add https://github.com/tpope/vim-surround.git vim/bundle/vim-surround
 git submodule add https://github.com/int3/vim-taglist-plus.git vim/bundle/vim-taglist-plus
 git submodule add https://github.com/nelstrom/vim-textobj-rubyblock.git vim/bundle/vim-textobj-rubyblock
@@ -32,6 +30,9 @@ git submodule add git://github.com/vim-scripts/netrw.vim.git vim/bundle/netrw.vi
 git submodule add git://github.com/tpope/vim-unimpaired.git vim/bundle/vim-unimpaired
 git submodule add git://github.com/xolox/vim-notes.git vim/bundle/vim-notes
 git submodule add https://github.com/wincent/Command-T.git vim/bundle/command-t
+git submodule add https://github.com/YorickPeterse/Autumn.vim.git vim/bundle/autumn.vim
+git submodule add https://github.com/kchmck/vim-coffee-script.git vim/bundle/vim-coffee-script
+
 
 # Init & update submodules
 git submodule init

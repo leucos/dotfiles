@@ -16,6 +16,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+garbage mlksdf
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal --working-directory `cat ~/.lastcd`
@@ -99,6 +100,10 @@ bindsym $mod+Shift+7 move workspace 7: nautilus
 bindsym $mod+Shift+8 move workspace 8: 8
 bindsym $mod+Shift+9 move workspace 9: 9
 bindsym $mod+Shift+0 move workspace 10: 10
+
+# move workspace to specifi output
+## bindsym $mod+Shift+l move workspace to output left
+## bindsym $mod+Shift+m move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+C reload

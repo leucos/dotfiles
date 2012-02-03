@@ -37,3 +37,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@$(hostname)\[\03
 export PS1='${debian_chroot:+($debian_chroot)}\[\e[0;33m\]\u@$(hostname)\[\033[00m\]\[\033[1;31m\]${text}\[\033[00m\]:\[\033[01;34m\]$(last2pwd)\[\033[00m\]\$ '
 
 # '\n\[\e[0;90m\][\h] [\[\e[0;33m\]\w\[\e[0;90m\]]\n\[\e[0;90m\][\[\e[0;31m\]\u\[\e[0;90m\]] >>\[\e[0m\] '  
+
+export PAGER=less
+export EDITOR=vim
+export TERMINAL=gnome-terminal

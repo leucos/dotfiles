@@ -1,6 +1,7 @@
 
 DEFAULT_SESSION=twm
 
+
 ## test for an existing bus daemon, just to be safe
 if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
 ## if not found, launch a new one
@@ -18,7 +19,11 @@ gnome*)
   ;;
 i3)
   ~leucos/.bin/lidwatch &
-  exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
+  export PAGER=less
+  export EDITOR=vim
+  export TERMINAL="gnome-terminal -e "
+
+  exec i3 --force-xinerama -V > ~/.i3/log 2>&1
 #  exec ck-launch-session dbus-launch i3 --force-xinerama -V >>~/.i3/i3log 2>&1
   ;;
 wmfs)
