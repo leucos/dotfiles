@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/tcalc_vim"]
+	path = vim/bundle/tcalc_vim
+	url = https://github.com/tomtom/tcalc_vim.git

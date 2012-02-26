@@ -32,12 +32,16 @@ git submodule add git://github.com/xolox/vim-notes.git vim/bundle/vim-notes
 git submodule add https://github.com/wincent/Command-T.git vim/bundle/command-t
 git submodule add https://github.com/YorickPeterse/Autumn.vim.git vim/bundle/autumn.vim
 git submodule add https://github.com/kchmck/vim-coffee-script.git vim/bundle/vim-coffee-script
-
+git submodule add https://github.com/tomtom/tcalc_vim.git vim/bundle/tcalc_vim
 
 # Init & update submodules
 git submodule init
 git submodule update
 
+# Updating modules
+# for i in vim/bundle/*; do cd $i; git pull origin master; cd -; done
+
 # Go back where we came from
 cd $MYOLDPWD
+
 

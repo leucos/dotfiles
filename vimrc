@@ -34,10 +34,14 @@ set history=50          " keep 50 lines of command
 "Set terminal title to filename
 set title
 
+" We print on A4
+set printoptions=paper:A4
+
 " Solarized theme
 " set background=light
 set background=dark
 colorscheme solarized
+"colorscheme autumn
 
 " Set encoding
 set encoding=utf-8
@@ -150,7 +154,8 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " VIM notes
-let g:notes_directory = '~/Documents/notes'
+"let g:notes_directory = '~/Documents/notes'
+let g:notes_directory = '~/Dropbox/Data/vimnotes/'
 
 runtime macros/matchit.vim
 

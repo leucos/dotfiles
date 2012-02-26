@@ -5,6 +5,15 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# urxvt/xterm/sakura/Germinal/kuake/eterm
+#
+#libast, eterm
+#xorg-luit,xbitmaps,xterm
+#sakura
+# kdebase-konsole,kdebase-lib,yakuake
+#
+#
+#
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -16,7 +25,6 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-garbage mlksdf
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal --working-directory `cat ~/.lastcd`
@@ -81,7 +89,7 @@ bindsym $mod+q focus parent
 bindsym $mod+ampersand workspace 1: terms
 bindsym $mod+eacute workspace 2: chrome
 bindsym $mod+quotedbl workspace 3: irc
-bindsym $mod+apostrophe workspace 4: mail 
+bindsym $mod+apostrophe workspace 4: mail
 bindsym $mod+parenleft workspace 5: whatever
 bindsym $mod+minus workspace 6: music
 bindsym $mod+egrave workspace 7: nautilus
@@ -206,3 +214,5 @@ exec cryptkeeper
 exec pidgin
 exec dropboxd start
 exec nm-applet
+exec pnmixer
+
