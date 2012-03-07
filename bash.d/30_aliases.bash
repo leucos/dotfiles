@@ -71,7 +71,7 @@ alias single='ln -sf /etc/X11/xorg.conf.single /etc/X11/xorg.conf'
 alias projector='ln -sf /etc/X11/xorg.conf.projector /etc/X11/xorg.conf'
 
 alias i3restart='feh --bg-fill ~/Images/backgrounds/steph5.jpg; i3-msg "restart"'
-alias dual='disper -d auto -e -t left; i3restart'
+alias dual='disper -d auto -e -t right; i3restart'
 alias clone='disper -c; i3restart'
 alias single='disper -s; i3restart'
 

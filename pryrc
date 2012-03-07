@@ -81,7 +81,7 @@ end
 # color codes, but such is life. 
 CodeRay.scan("example", :ruby).term # just to load necessary files
 # Token colors pulled from: https://github.com/rubychan/coderay/blob/master/lib/coderay/encoders/terminal.rb
-TERM_TOKEN_COLORS = {
+CodeRay::Encoders::Term::TERM_TOKEN_COLORS = {
         :attribute_name => '33',
         :attribute_value => '31',
         :binary => '1;35',

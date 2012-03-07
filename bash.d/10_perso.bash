@@ -3,7 +3,7 @@
 # perso adddons for bash
 # =======================
 
-export PATH=$PATH:~/.bin:/usr/share/lib/shflags/
+export PATH=$PATH:~/.bin:/usr/share/lib/shflags/:~/bin
 #
 # History handling
 #

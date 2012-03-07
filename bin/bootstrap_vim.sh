@@ -33,6 +33,7 @@ git submodule add https://github.com/wincent/Command-T.git vim/bundle/command-t
 git submodule add https://github.com/YorickPeterse/Autumn.vim.git vim/bundle/autumn.vim
 git submodule add https://github.com/kchmck/vim-coffee-script.git vim/bundle/vim-coffee-script
 git submodule add https://github.com/tomtom/tcalc_vim.git vim/bundle/tcalc_vim
+git submodule add https://github.com/mrtazz/simplenote.vim.git vim/bundle/simplenote
 
 # Init & update submodules
 git submodule init

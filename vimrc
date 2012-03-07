@@ -159,3 +159,5 @@ let g:notes_directory = '~/Dropbox/Data/vimnotes/'
 
 runtime macros/matchit.vim
 
+source ~/.simplenoterc
+
