@@ -59,8 +59,11 @@ for i in files/*; do
 	fi
 
 	if [ $DOIT -eq 1 ]; then
-    [ -h `pwd`/$i ] && rm -rf `pwd`/$i
-		ln -sf `pwd`/$i $DEST
+    if [ -d $DEST ]; then
+      rm -rf $DEST 
+    fi
+
+    echo "	ln -sf `pwd`/$i $DEST"
 		echo -e "\t => installed"
 	else
 		echo -e "\t => skipped"
