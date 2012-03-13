@@ -18,6 +18,20 @@ if [ "x$resp" == "x" ]; then
 	resp=$DEFAULT
 fi
 
+# should install requirements according to ruby & os
+
+# For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
+#ruby: pacman -Sy --noconfirm gcc patch curl zlib readline libxml2 libxslt git autoconf diffutils make libtool bison subversion
+
+# For JRuby, install the following:
+#jruby: pacman -Sy --noconfirm jdk jre curl
+#jruby-head: pacman -Sy apache-ant
+
+# For IronRuby, install the following:
+#ironruby: pacman -Sy --noconfirm mono
+
+
+
 rbenv install $resp || exit
 
 echo "Make it default ruby [y/n] ? "

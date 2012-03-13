@@ -63,7 +63,7 @@ for i in files/*; do
       rm -rf $DEST 
     fi
 
-    echo "	ln -sf `pwd`/$i $DEST"
+    ln -sf `pwd`/$i $DEST
 		echo -e "\t => installed"
 	else
 		echo -e "\t => skipped"
