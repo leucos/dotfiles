@@ -1,18 +1,33 @@
-= Inspired from Ryan Bates Dot Files (https://github.com/ryanb/dotfiles)
+= ERASME Dotfiles 
 
-These are config files to set up a system the way I like it.
+Once inspired from Ryan Bates Dot Files (https://github.com/ryanb/dotfiles)
+
+These are config files to set up a system the way we like it.
+They're bash inclined, and should work at least in Ubuntu & Arch.
 
 == Installation
 
-  git clone git://github.com/leucos/dotfiles.git ~/.dotfiles
+  git clone git://github.com/erasme/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
-  rake install
+  ./install.sh
 
-You can then bootstrap your vim plugins by invoking :
-
-  bootstrap_vim.sh
-
-The plugins are managed with pathogen and Git submodules, can't be easier.
+This will install :
+ - dotfiles
+ - custom gitconfig
+ - basic packages for a proper server & ruby environment
+ - rbenv and your favorite ruby version
+ - vim scripts (with pathogen + submodules)
 
 You probably want to remove some scripts in bash.d according to your configuration.
 
+The rbenv install script will install rbenv system wide if install.sh is invoked as root
+
+During the script, when asked for confirmation, y means yes, n means no, A means 'yes always' and N means 'No, never'
+
+You can add your own erb templates in templates/ and install scripts in scripts/
+For the latter, please name your scripts XX_what-my-script-does.bash where XX are two digits denoting execution order among all scripts (just like .bash.d/ does in this setup).
+
+== Questions, flames, inquiries
+
+Please use github issues and pull requests !
+ 

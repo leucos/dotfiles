@@ -1,6 +1,6 @@
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= STDERR.print("Your Name: "); STDERR.flush; STDIN.gets.chomp %>
+  email = <%= STDERR.print("Your Email: "); STDERR.flush; STDIN.gets.chomp %>
 
 [color]
   diff = auto
@@ -19,8 +19,8 @@
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 
 [github]
-  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+  user = <%= STDERR.print("GitHub Username: "); STDERR.flush; STDIN.gets.chomp %>
+  token = <%= STDERR.print("GitHub API Token: "); STDERR.flush; STDIN.gets.chomp %>
 
 [merge]
   tool = meld
