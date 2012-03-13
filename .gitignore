@@ -1,0 +1,6 @@
+files/vim/backup/*
+files/vim/bundle/*
+files/vim/.netrwhist
+i3/log
+.gitmodules
+
