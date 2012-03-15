@@ -5,6 +5,8 @@ echo "=============================="
 echo "Installing ruby"
 echo "=============================="
 
+. utils/functions.sh
+
 rbenv install 2>&1 | grep '^  [^ ]' | column
 
 # Convoluted... will break really soon...
@@ -18,19 +20,20 @@ if [ "x$resp" == "x" ]; then
 	resp=$DEFAULT
 fi
 
-# should install requirements according to ruby & os
+echo "RESP is $resp"
 
-# For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
-#ruby: pacman -Sy --noconfirm gcc patch curl zlib readline libxml2 libxslt git autoconf diffutils make libtool bison subversion
+echo -n "Installing requirements for " 
 
-# For JRuby, install the following:
-#jruby: pacman -Sy --noconfirm jdk jre curl
-#jruby-head: pacman -Sy apache-ant
-
-# For IronRuby, install the following:
-#ironruby: pacman -Sy --noconfirm mono
-
-
+case "$resp" in
+  jruby*)
+    echo " JRUBY"
+    install_packages_for "jruby"
+    ;;
+  *)
+    echo " MRI/..."
+    install_packages_for "ruby"
+    ;;
+esac
 
 rbenv install $resp || exit
 
