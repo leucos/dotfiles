@@ -87,4 +87,6 @@ alias fileserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :Docum
 # Tmux
 alias ta="tmux attach"
 alias tu="tmux -u"
-
+alias tstart="[ ! -d /var/tmux ] && sudo mkdir -p 777 /var/tmux; tmux -S /var/tmux/pairing new-session -d -s pairing -n main 'bash'"
+alias tstop="tmux -S /var/tmux/pairing kill-server"
+alias tattach="tmux -S /var/tmux/pairing -2 attach -t pairing"
