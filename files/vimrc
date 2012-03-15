@@ -40,8 +40,12 @@ set printoptions=paper:A4
 " Solarized theme
 " set background=light
 set background=dark
-colorscheme solarized
-"colorscheme autumn
+"colorscheme solarized
+colorscheme autumn
+
+" Set cursorlines & column
+set cursorline
+set cursorcolumn
 
 " Set encoding
 set encoding=utf-8
@@ -72,10 +76,22 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.svn,CVS,*.so,*.
 set laststatus=2
 
 " Folding
-set foldmethod=syntax
-set foldcolumn=2
-set foldnestmax=10
-set foldlevel=999999
+" set foldmethod=syntax
+" set foldcolumn=2
+" set foldnestmax=10
+" set foldlevel=999999
+
+" Indent guides plugin
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+autocmd VimEnter * :IndentGuidesEnable
+
+"" Indent guides : workaround for solarized
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
 
 " backspace
 set bs=2

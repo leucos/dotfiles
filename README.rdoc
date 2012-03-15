@@ -1,9 +1,9 @@
-= ERASME Dotfiles 
+= My Dotfiles 
 
 Once inspired from Ryan Bates Dot Files (https://github.com/ryanb/dotfiles)
 
-These are config files to set up a system the way we like it.
-They're bash inclined, and should work at least in Ubuntu & Arch.
+These are config files to set up a system the way I like it.
+They're bash inclined, and should work at least in Ubuntu (Arch to come).
 
 == Installation
 
@@ -18,14 +18,20 @@ This will install :
  - rbenv and your favorite ruby version
  - vim scripts (with pathogen + submodules)
 
-You probably want to remove some scripts in bash.d according to your configuration.
+You probably want to remove some scripts in bash.d according to your
+configuration.
 
-The rbenv install script will install rbenv system wide if install.sh is invoked as root
+The rbenv install script will install rbenv system wide if install.sh is
+invoked as root
 
-During the script, when asked for confirmation, y means yes, n means no, A means 'yes always' and N means 'No, never'
+During the script, when asked for confirmation, y means yes, n means no, A
+means 'yes always' and N means 'No, never'
 
-You can add your own erb templates in templates/ and install scripts in scripts/
-For the latter, please name your scripts XX_what-my-script-does.bash where XX are two digits denoting execution order among all scripts (just like .bash.d/ does in this setup).
+You can add your own erb templates in templates/ and install scripts in
+scripts/
+For the latter, please name your scripts XX_what-my-script-does.bash where XX
+are two digits denoting execution order among all scripts (just like .bash.d/
+does in this setup).
 
 == Questions, flames, inquiries
 

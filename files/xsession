@@ -14,6 +14,8 @@ if disper -l | grep 'DFP-1'; then
   dual
 fi
 
+xrdb -load ~/.Xresources &
+
 case $1 in
 awesome)
   exec awesome
