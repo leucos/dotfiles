@@ -2,7 +2,7 @@
 
 echo
 echo "=============================="
-echo "Installing rbenv"
+echo "Installing basic packages"
 echo "=============================="
 
 # Update, upgrade and install development tools
