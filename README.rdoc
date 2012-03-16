@@ -7,7 +7,7 @@ They're bash inclined, and should work at least in Ubuntu (Arch to come).
 
 == Installation
 
-  git clone git://github.com/erasme/dotfiles.git ~/.dotfiles
+  git clone git://github.com/leucos/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
   ./install.sh
 
