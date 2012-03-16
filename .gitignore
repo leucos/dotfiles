@@ -1,4 +1,4 @@
-files/vim/backup/*
+files/vim/backup/*.swp
 files/vim/bundle/*
 files/vim/.netrwhist
 i3/log
