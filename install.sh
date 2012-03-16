@@ -96,35 +96,6 @@ for i in files/*; do
   fi
 done
 
-echo
-echo "=============================="
-echo "Installing templates"
-echo "=============================="
-
-lastrep="n"
-
-for i in `ls templates/*`; do 
-  ACTION=`echo $i | sed -e 's/.*\/\(.*\)\.erb/\1/'`
-  echo
-  echo -n "* Install $ACTION [y/n/q] ($lastrep) ? "
-  read resp
-
-  # If resp is empty, we assume the user wants to repeat his last answer
-  # Otherwise, we store this answer in lastrep for next time
-  if [ -z $resp ]; then
-    resp=$lastrep
-  else
-    lastrep=$resp
-  fi
-
-  if [ "$resp" == "y" ]; then
-    erb $i > $HOME/."$ACTION"
-    echo "  => wrote $HOME"/."$ACTION" 
-  elif [ "$resp" == "q" ]; then
-    exit
-  fi 
-done
-
 source ~/.bashrc
 
 echo
