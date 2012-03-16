@@ -6,7 +6,7 @@ echo -n "Your Email: "
 read EMAIL
 echo -n "GitHub Username :"
 read GHNAME
-echo -n "GitHub API Key  :"
+echo -n "GitHub API Key (hint: https://github.com/settings/admin) :"
 read GHKEY
 
 export NAME EMAIL GHNAME GHKEY
