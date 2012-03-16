@@ -20,10 +20,6 @@ get_os()
       OS="arch"
     fi
   fi
-
-  echo "OS      : $OS"
-  echo "ARCH    : $ARCH"
-  echo "VERSION : $VERSION"
 }
 
 set_installers() {

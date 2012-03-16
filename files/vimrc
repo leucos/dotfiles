@@ -14,6 +14,7 @@ set autochdir
 " Default encoding according to locale
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
   set fileencodings=utf-8,latin1
+  set encoding=utf-8
 endif
 
 " mapleader change for easier access
@@ -25,11 +26,17 @@ set number
 set ruler
 syntax on
 
+set cursorcolumn
+set cursorline
+
 " viminfo
 set viminfo='20,\"50    " read/write a .viminfo file, don't store more
                         " than 50 lines of registers
 set history=50          " keep 50 lines of command
                         " line history
+
+" Vim Powerline
+let g:Powerline_symbols = 'fancy'
 
 "Set terminal title to filename
 set title
@@ -41,11 +48,8 @@ set printoptions=paper:A4
 " set background=light
 set background=dark
 "colorscheme solarized
-colorscheme autumn
-
-" Set cursorlines & column
-set cursorline
-set cursorcolumn
+"colorscheme autumn
+colorscheme desert
 
 " Set encoding
 set encoding=utf-8
@@ -82,15 +86,13 @@ set laststatus=2
 " set foldlevel=999999
 
 " Indent guides plugin
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-autocmd VimEnter * :IndentGuidesEnable
+"autocmd VimEnter * :IndentGuidesEnable
 
 "" Indent guides : workaround for solarized
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
 
 
 " backspace
