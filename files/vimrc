@@ -181,12 +181,10 @@ let g:notes_directory = '~/Dropbox/Data/vimnotes/'
 
 runtime macros/matchit.vim
 
-<<<<<<< HEAD
-source ~/.simplenoterc
-source ~/.gistrc
-=======
+if filereadable('~/.gistrc')
+  source ~/.gistrc
+endif
 if filereadable('~/.simplenoterc')
   source ~/.simplenoterc
 endif
->>>>>>> 756a337203d17c079d9c7dfab9dffae45b94242c
 
