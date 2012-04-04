@@ -12,7 +12,6 @@ cd `pwd -P`
 cd ../..
 
 # Add submodules
-<<<<<<< HEAD
 git submodule add git://github.com/tpope/vim-fugitive.git vim/bundle/vim-fugitive
 git submodule add git://github.com/chrismetcalf/vim-conque.git vim/bundle/vim-conque
 git submodule add https://github.com/mattn/gist-vim.git vim/bundle/gist-vim
