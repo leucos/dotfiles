@@ -8,7 +8,7 @@ echo "=============================="
 
 echo -e "\n\n========================================================"
 
-ENVSCRIPT="~/.dotfiles/bash.d/55_rubymanager.bash"
+ENVSCRIPT="~/.dotfiles/files/bash.d/55_rubymanager.bash"
 
 if [ "$USER" == "root" ]; then
   echo -e "Sorry, I won't install RVM as root, it just sucks"
