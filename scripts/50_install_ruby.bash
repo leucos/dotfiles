@@ -5,10 +5,14 @@ echo "=============================="
 echo "Installing ruby"
 echo "=============================="
 
+<<<<<<< HEAD
 if ! `which rbenv`; then
   echo "Sorry, I can only auto install ruby with rbenv. Do it youserlf with RVM."
   exit
 fi
+=======
+. utils/functions.sh
+>>>>>>> 756a337203d17c079d9c7dfab9dffae45b94242c
 
 rbenv install 2>&1 | grep '^  [^ ]' | column
 
@@ -22,6 +26,21 @@ read resp
 if [ "x$resp" == "x" ]; then
 	resp=$DEFAULT
 fi
+
+echo "RESP is $resp"
+
+echo -n "Installing requirements for " 
+
+case "$resp" in
+  jruby*)
+    echo " JRUBY"
+    install_packages_for "jruby"
+    ;;
+  *)
+    echo " MRI/..."
+    install_packages_for "ruby"
+    ;;
+esac
 
 rbenv install $resp || exit
 

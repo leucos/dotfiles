@@ -1,4 +1,6 @@
-vim/backup/*
-vim/.netrwhist
+files/vim/backup/*.swp
+files/vim/bundle/*
+files/vim/.netrwhist
 i3/log
+.gitmodules
 

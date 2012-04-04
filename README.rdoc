@@ -7,7 +7,7 @@ They're bash inclined, and should work at least in Ubuntu (Arch to come).
 
 == Installation
 
-  git clone git://github.com/erasme/dotfiles.git ~/.dotfiles
+  git clone git://github.com/leucos/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
   ./install.sh
 
@@ -24,8 +24,9 @@ configuration.
 The rbenv install script will install rbenv system wide if install.sh is
 invoked as root
 
-During the script, when asked for confirmation, y means yes, n means no, A
-means 'yes always' and N means 'No, never'
+During the script, when asked for confirmation, y means 'yes', n means 'no', A
+means 'always yes' and N means 'always no'. If you just press 'enter', it will
+use the last reply you made.
 
 You can add your own erb templates in templates/ and install scripts in
 scripts/

@@ -1,6 +1,24 @@
+#!/usr/bin/env bash
+
+echo -n "Your Name: "
+read NAME
+echo -n "Your Email: "
+read EMAIL
+echo -n "GitHub Username :"
+read GHNAME
+echo -n "GitHub API Key (hint: https://github.com/settings/admin) :"
+read GHKEY
+
+export NAME EMAIL GHNAME GHKEY
+
+
+cat <<EOF> /home/$USER/.gitconfig
+
+# Generated github config
+
 [user]
-  name = <%= STDERR.print("Your Name: "); STDERR.flush; STDIN.gets.chomp %>
-  email = <%= STDERR.print("Your Email: "); STDERR.flush; STDIN.gets.chomp %>
+  name = $NAME
+  email = $EMAIL
 
 [color]
   diff = auto
@@ -8,7 +26,7 @@
   branch = auto
 
 [core]
-  excludesfile = /home/<%= ENV['USER'] %>/.gitignore
+  excludesfile = /home/$USER/.gitignore
   editor = vim
   autocrlf = input
 
@@ -19,8 +37,8 @@
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 
 [github]
-  user = <%= STDERR.print("GitHub Username: "); STDERR.flush; STDIN.gets.chomp %>
-  token = <%= STDERR.print("GitHub API Token: "); STDERR.flush; STDIN.gets.chomp %>
+  user = $GHNAME
+  token = $GHKEY
 
 [merge]
   tool = meld
@@ -46,3 +64,6 @@
 
 [init]
   templatedir = ~/.git_template
+
+EOF
+
