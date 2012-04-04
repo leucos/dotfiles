@@ -14,7 +14,7 @@ if [ "$USER" == "root" ]; then
   read
 else
   PREFIX="$HOME/.rbenv"
-  ENVSCRIPT="~/.dotfiles/files/bash.d/55_rbenv.bash"
+  ENVSCRIPT="$HOME/.dotfiles/files/bash.d/55_rbenv.bash"
   echo -e "About to install rbenv for user $USER in $PREFIX\nPress enter to continue, Ctrl-C to quit"
   read
 fi
