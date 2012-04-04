@@ -82,7 +82,7 @@ alias gt='gnome-terminal --working-directory `cat ~/.lastcd`'
 alias sl="subl -ab"
 
 # One line file server
-alias fileserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd).start'"
+alias fileserve="ruby -rwebrick -e's=WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap("INT"){ s.shutdown };s.start'"
 
 # Tmux
 alias ta="tmux attach"

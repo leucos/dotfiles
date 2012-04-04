@@ -5,6 +5,11 @@ echo "=============================="
 echo "Installing ruby"
 echo "=============================="
 
+if ! `which rbenv`; then
+  echo "Sorry, I can only auto install ruby with rbenv. Do it youserlf with RVM."
+  exit
+fi
+
 rbenv install 2>&1 | grep '^  [^ ]' | column
 
 # Convoluted... will break really soon...
