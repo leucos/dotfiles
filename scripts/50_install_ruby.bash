@@ -5,14 +5,12 @@ echo "=============================="
 echo "Installing ruby"
 echo "=============================="
 
-<<<<<<< HEAD
 if ! `which rbenv`; then
   echo "Sorry, I can only auto install ruby with rbenv. Do it youserlf with RVM."
   exit
 fi
-=======
+
 . utils/functions.sh
->>>>>>> 756a337203d17c079d9c7dfab9dffae45b94242c
 
 rbenv install 2>&1 | grep '^  [^ ]' | column
 
