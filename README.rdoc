@@ -2,8 +2,9 @@
 
 Once inspired from Ryan Bates Dot Files (https://github.com/ryanb/dotfiles)
 
-These are config files to set up a system the way I like it.
-They're bash inclined, and should work at least in Ubuntu (Arch to come).
+These are config files to set up a system the way I like it.  They're
+bash/vim/ruby inclined (although ruby and vim are not required for the
+installation), and should work at least in Ubuntu (Arch to come).
 
 == Installation
 
