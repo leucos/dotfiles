@@ -50,13 +50,10 @@ set background=dark
 "colorscheme solarized
 "colorscheme autumn
 colorscheme desert
-<<<<<<< HEAD
 
 " Set cursorlines & column
 set cursorline
 set cursorcolumn
-=======
->>>>>>> 756a337203d17c079d9c7dfab9dffae45b94242c
 
 " Set encoding
 set encoding=utf-8
