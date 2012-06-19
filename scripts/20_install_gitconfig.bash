@@ -63,7 +63,7 @@ cat <<EOF> /home/$USER/.gitconfig
   history-view-vpane-position = 433
 
 [init]
-  templatedir = ~/.git_template
+#  templatedir = ~/.git_template
 
 EOF
 
