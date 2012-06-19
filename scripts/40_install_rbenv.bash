@@ -29,7 +29,7 @@ git clone git://github.com/sstephenson/rbenv.git $PREFIX
 
 # Install environnement stuff
 echo '# rbenv setup' > $ENVSCRIPT
-echo 'export PREFIX=/usr/local/rbenv' >> $ENVSCRIPT
+echo "export PREFIX=$PREFIX" >> $ENVSCRIPT
 echo 'export PATH="$PREFIX/bin:$PATH"' >> $ENVSCRIPT
 echo 'eval "$(rbenv init -)"' >> $ENVSCRIPT
 chmod +x $ENVSCRIPT
